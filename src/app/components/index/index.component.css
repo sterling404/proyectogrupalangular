@@ -1,0 +1,46 @@
+.contenCard{
+    display: grid;
+    position: relative;
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 2fr));
+    gap: 8px;
+    
+}
+.sectioncomidaRapida {
+    
+    width: 100%;
+}
+.image {
+    border-radius: 3px 3px 0 0;
+    min-height: 220px;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    
+    margin-top: 0.5rem;
+
+}
+.title{
+    size: 18px;
+    font-weight: 600;
+}
+.image{
+    min-height: 220px;
+}
+.description{
+    
+}
+.sectionTitle{
+    display: block;
+    font-size: 19px;
+    font-weight: 600;
+    margin: 1rem  0 !important;
+    
+
+}
+.conten{
+    margin: 3rem;
+
+}
