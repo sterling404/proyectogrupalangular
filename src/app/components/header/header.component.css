@@ -49,13 +49,18 @@
 /*car shop*/
 .carShop {
   position: absolute;
-  margin-top: 10px;
+  top: 80px;
   right: 0;
   z-index: 1;
   background: #f2f2f2;
   height: 100vh;
   width: 400px;
   padding: 1rem;
+  /* display: none; */
+}
+.menu {
+    font-size: 30px;
+    
 }
 .card {
   margin-bottom: 20px;
@@ -76,6 +81,10 @@
     flex-direction: column;
 }
 
+.icon {
+    display: flex;
+    gap: 20px;
+}
 
 
 /* Estilos para el contenedor del contador */
@@ -128,3 +137,9 @@
     border-color: #1976d2; /* Cambiar el color del borde cuando se enfoca */
     box-shadow: 0 0 5px rgba(25, 118, 210, 0.5);
   }
+
+
+
+  /**/
+
+  

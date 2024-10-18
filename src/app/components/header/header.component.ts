@@ -7,6 +7,11 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   value: number = 2;
+  showCarShop: boolean = false; 
+
+  toggleCarShop() {
+    this.showCarShop = !this.showCarShop; 
+  }
 
   increment() {
     if (this.value < 20) {
