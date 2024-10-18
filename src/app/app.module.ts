@@ -10,6 +10,8 @@ import { HeaderComponent } from './components/header/header.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatBadgeModule} from '@angular/material/badge';
+import {MatMenuModule} from '@angular/material/menu';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,7 @@ import {MatBadgeModule} from '@angular/material/badge';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCardModule,
-    MatIconModule,MatBadgeModule, MatButtonModule,
+    MatIconModule,MatBadgeModule, MatButtonModule, MatMenuModule,FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
