@@ -1,0 +1,31 @@
+<div class="background">
+    <div class="container">
+      <h2 class="titulo">Ingreso de producto</h2>
+      <div class="cuadro-contenedor">
+        <div class="product-entry">
+          <div class="image-container">
+            <img src="assets/Imagen de WhatsApp 2024-10-17 a las 19.12.06_dbe99850.jpg" alt="Producto" class="product-image">
+          </div>
+  
+          <div class="product-form">
+            <label for="nombre-producto">Nombre producto</label>
+            <input type="text" id="nombre-producto" [(ngModel)]="nombreProducto" placeholder="Completo">
+  
+            <label for="descripcion-producto">Descriptio</label>
+            <textarea id="descripcion-producto" rows="4" [(ngModel)]="descripcionProducto">Pan
+  plata
+  vionesa
+  Tomate</textarea>
+  
+            <div class="button-group">
+              <button class="button-modificar">Modificar ingredientes</button>
+              <button class="button-agregar">Agregar al carrito</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  

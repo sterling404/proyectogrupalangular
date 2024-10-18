@@ -1,0 +1,72 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.background {
+    background-color: floralwhite;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cuadro {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 1200px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.column-left {
+    width: 30%;
+}
+
+.column-right {
+    width: 60%; /* Ajusta esta columna para ocupar más espacio */
+    display: flex;
+    flex-direction: column; /* Para apilar los inputs uno debajo del otro */
+    gap: 15px; /* Espacio entre cada campo */
+}
+
+.mat-form-field {
+    width: 100%; /* Asegura que los inputs ocupen todo el ancho de su columna */
+}
+
+button {
+    margin: 10px 0;
+    
+}
+
+/* Estilos para cambiar el tamaño de los botones */
+.small-button {
+    width: 100px;  /* Botones pequeños */
+}
+
+.full-width-button {
+    width: 100%;  /* Botones más anchos cuando se sube una imagen */
+}
+
+.image-preview {
+    margin-top: 20px;
+    max-width: 100%;
+    max-height: 300px;
+    width: auto;
+    height: auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
