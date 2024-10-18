@@ -1,0 +1,119 @@
+.contenCard {
+    display: flex;
+    justify-content: flex-start;
+    padding: 16px;
+    width: 100%;
+}
+
+mat-card {
+    display: flex;
+    align-items: flex-start;  
+    justify-content: flex-start;  
+    width: 100%;
+    padding: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+mat-card img {
+    width: 180px;
+    height: 180px;
+    border-radius: 4px;
+    margin-right: 16px;
+    object-fit: cover;
+}
+
+mat-card-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; 
+    flex-grow: 1; 
+}
+
+.title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.description {
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.btn {
+    padding: 6px 12px;
+    border: 1px solid #6c757d;
+    background-color: white;
+    color: #6c757d;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.875rem;
+}
+
+.btn:hover {
+    background-color: #f0f0f0;
+}
+
+.sectionPedidos{
+    width: 100%;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 0.5rem;
+
+}
+
+.sectionTitle{
+    display: block;
+    font-size: 19px;
+    font-weight: 600;
+    margin: 1rem  0 !important;
+
+
+}
+.conten{
+    margin: 3rem;
+
+}
+.contenedorFormulario {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="number"] {
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  .pedido {
+    margin-top: 16px;
+  }
+  
+  input[type="checkbox"] {
+    margin-right: 8px;
+  }
+  

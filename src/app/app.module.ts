@@ -23,6 +23,7 @@ import { FormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select'; 
 import { MatOptionModule } from '@angular/material/core';
 import { DescripcionComponent } from './components/descripcion/descripcion.component';
+import { PedidosComponent } from './components/pedidos/pedidos.component';
 
 
 
@@ -36,6 +37,7 @@ import { DescripcionComponent } from './components/descripcion/descripcion.compo
     HeaderComponent,
     IngresoComponent,
     DescripcionComponent,
+    PedidosComponent,
     
   ],
   imports: [
