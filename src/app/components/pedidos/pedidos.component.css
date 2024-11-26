@@ -7,28 +7,30 @@
 
 mat-card {
     display: flex;
-    align-items: flex-start;  
-    justify-content: flex-start;  
+    align-items: center; /* Alinea el contenido verticalmente al centro */
+    flex-direction: row; /* Configura el contenido en una fila */
+    justify-content: space-between;  
     width: 100%;
     padding: 16px;
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: white;
 }
 mat-card img {
     width: 180px;
     height: 180px;
     border-radius: 4px;
-    margin-right: 16px;
     object-fit: cover;
 }
 
 mat-card-content {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between; 
-    flex-grow: 1; 
+    flex-direction: column; /* Asegura que los elementos dentro del contenido estén en columna */
+    align-items: flex-start; /* Alinea el contenido hacia la izquierda */
+    justify-content: center; /* Centra el contenido verticalmente */
+    flex-grow: 1;
+    margin-left: 16px; /* Agrega un margen entre la imagen y el contenido */
 }
 
 .title {
@@ -44,18 +46,18 @@ mat-card-content {
 }
 
 .btn {
+    align-self: center; /* Centra el botón horizontalmente */
+    margin-top: auto; /* Mueve el botón al final del contenido */
     padding: 6px 12px;
     border: 1px solid #6c757d;
-    background-color: white;
-    color: #6c757d;
+    background-color: #6c63ff;
+    color: #ffffff;
     border-radius: 4px;
     cursor: pointer;
     font-size: 0.875rem;
 }
 
-.btn:hover {
-    background-color: #f0f0f0;
-}
+
 
 .sectionPedidos{
     width: 100%;
@@ -64,7 +66,6 @@ mat-card-content {
 .content{
     display: flex;
     flex-direction: column;
-
     margin-top: 0.5rem;
 
 }
@@ -88,6 +89,7 @@ mat-card-content {
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: white;
   }
   
   form {
@@ -116,4 +118,11 @@ mat-card-content {
   input[type="checkbox"] {
     margin-right: 8px;
   }
-  
+
+  .background {
+    background-color: floralwhite;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
