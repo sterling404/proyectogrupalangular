@@ -1,15 +1,30 @@
 <div class="background">
-  <div class="cuadro">
+  <form [formGroup]="myForm" class="cuadro">
     <h3>Sube la foto del producto</h3>
     <div class="form-container">
       <!-- Columna de la imagen -->
       <div class="column-left">
-        <button mat-raised-button color="primary" (click)="fileInput.click()" [ngClass]="buttonClass">Subir foto</button>
-        <input type="file" #fileInput (change)="onFileSelected($event)" accept="image/*" style="display: none;">
-        <button mat-raised-button color="warn" (click)="onClearImage()" [ngClass]="buttonClass">Eliminar foto</button>
+        <div class="butones">
+
+          <button mat-raised-button color="primary" (click)="fileInput.click()" >
+            Subir foto
+          </button>
+          <input type="file" #fileInput (change)="onFileSelected($event)" accept="image/*" style="display: none;">
+          <button mat-raised-button color="warn" (click)="onClearImage()" >
+            Eliminar foto
+          </button>
+        </div>
+        
+        <!-- Mostrar vista previa local -->
         <div *ngIf="imagePreview">
           <p>Vista previa:</p>
           <img [src]="imagePreview" alt="Vista previa de la imagen" class="image-preview">
+        </div>
+
+        <!-- Mostrar imagen subida al servidor -->
+        <div *ngIf="imagePath && !imagePreview">
+          <p>Imagen subida:</p>
+          <img [src]="imagePath" alt="Imagen subida al servidor" class="image-preview">
         </div>
       </div>
 
@@ -17,30 +32,34 @@
       <div class="column-right">
         <mat-form-field>
           <mat-label>Nombre producto</mat-label>
-          <input matInput placeholder="Ej: pizza veggi">
+          <input formControlName="nombre" matInput placeholder="Ej: pizza veggi">
         </mat-form-field>
 
         <mat-form-field>
           <mat-label>Descripción</mat-label>
-          <textarea matInput placeholder="Ej: Contiene: palta..."></textarea>
+          <textarea formControlName="descripcion" matInput placeholder="Ej: Contiene: palta..."></textarea>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Iingredientes</mat-label>
+          <textarea formControlName="ingredientes" matInput placeholder="Ej: Contiene: palta..."></textarea>
         </mat-form-field>
 
         <mat-form-field>
           <mat-label>Precio</mat-label>
-          <input matInput placeholder="$$$">
+          <input formControlName="precio" matInput placeholder="$$$">
         </mat-form-field>
 
         <mat-form-field>
           <mat-label>Categoría</mat-label>
-          <mat-select>
+          <mat-select formControlName="categoria">
             <mat-option *ngFor="let food of foods" [value]="food.value">
               {{food.viewValue}}
             </mat-option>
           </mat-select>
         </mat-form-field>
 
-        <button mat-raised-button>Enviar</button>
+        <button mat-raised-button (click)="saveForm()" color="primary">Enviar</button>
       </div>
     </div>
-  </div>
+  </form>
 </div>

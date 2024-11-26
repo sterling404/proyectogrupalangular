@@ -4,63 +4,29 @@
     <section class="sectioncomidaRapida">
       <span class="sectionTitle"> Almuersos</span>
       <div class="contenCard">
-        <mat-card>
-          <img class="image" src="assets/arozchaufa.webp" alt="completos" />
+        <mat-card *ngFor="let plato of platos">
+          <img class="image" [src]="plato.imagen" alt="completos" />
           <mat-card-content class="content">
-            <h4 class="title">Aroz chaufa</h4>
+            <h4 class="title">{{ plato.nombre }}</h4>
             <p class="description">
-              Lorem ipsum, dolor sit amet consectetur a Rem ut,
+              {{ plato.descripcion }}
             </p>
-            <strong> $3.000</strong>
+            <strong>{{ plato.precio }}</strong>
           </mat-card-content>
+          <div class="Contenbutones">
+            <button mat-raised-button (click)="editarPlato(plato)"  color="primary" >
+              Editar
+            </button>
+            <button mat-raised-button (click)="deletePlato(plato.id )" color="warn" mat-button>
+              Eliminar
+            </button>
+          </div>
         </mat-card>
-        <mat-card>
-          <img class="image" src="assets/seviche.jpg" alt="completos" />
-          <mat-card-content class="content">
-            <h4 class="title">Seviche</h4>
-            <p class="description">
-              Lorem ipsum, dolor sit amet consectetur a Rem ut,
-            </p>
-            <strong> $3.000</strong>
-          </mat-card-content>
-        </mat-card>
-        
-        <mat-card>
-          <img class="image" src="assets/arozchaufa.webp" alt="completos" />
-          <mat-card-content class="content">
-            <h4 class="title">Aroz chaufa</h4>
-            <p class="description">
-              Lorem ipsum, dolor sit amet consectetur a Rem ut,
-            </p>
-            <strong> $3.000</strong>
-          </mat-card-content>
-        </mat-card>
-        <mat-card>
-          <img class="image" src="assets/seviche.jpg" alt="completos" />
-          <mat-card-content class="content">
-            <h4 class="title">Seviche</h4>
-            <p class="description">
-              Lorem ipsum, dolor sit amet consectetur a Rem ut,
-            </p>
-            <strong> $3.000</strong>
-          </mat-card-content>
-        </mat-card>
-        <mat-card>
-          <img class="image" src="assets/seviche.jpg" alt="completos" />
-          <mat-card-content class="content">
-            <h4 class="title">Seviche</h4>
-            <p class="description">
-              Lorem ipsum, dolor sit amet consectetur a Rem ut,
-            </p>
-            <strong> $3.000</strong>
-          </mat-card-content>
-        </mat-card>
-        
         
       </div>
     </section>
     
-    <section class="sectioncomidaRapida">
+    <!-- <section class="sectioncomidaRapida">
       <span class="sectionTitle" style="margin: 5px;"> Comida rapida</span>
       <div class="contenCard">
         <mat-card>
@@ -86,5 +52,5 @@
         
         
       </div>
-    </section>
+    </section> -->
 </div>
