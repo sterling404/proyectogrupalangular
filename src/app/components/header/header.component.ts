@@ -6,22 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  value: number = 2;
-  showCarShop: boolean = false; 
-
-  toggleCarShop() {
-    this.showCarShop = !this.showCarShop; 
-  }
-
-  increment() {
-    if (this.value < 20) {
-      this.value++;
-    }
-  }
-
-  decrement() {
-    if (this.value > 1) {
-      this.value--;
-    }
-  }
+  
 }

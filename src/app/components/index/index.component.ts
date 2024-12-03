@@ -1,6 +1,6 @@
 
 import { MainService } from 'src/app/services/main.service';
-import { Plato } from 'src/app/interface/app-interface';
+import { DetallesPedido } from 'src/app/interface/app-interface';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
@@ -12,6 +12,7 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
+import { CarritoService } from 'src/app/services/carrito.service';
 
 @Component({
   selector: 'app-index',
@@ -19,17 +20,23 @@ import {
   styleUrls: ['./index.component.css']
 })
 export class IndexComponent implements OnInit {
-  platos!: Plato[]
+  platos!: DetallesPedido[]
   isLoading = false;
 
-  constructor(private service: MainService,private snackBar: MatSnackBar, private router: Router){}
+  constructor(private service: MainService,private snackBar: MatSnackBar, private router: Router,private carritoService: CarritoService){}
   showMessage(message: string) {
     this.snackBar.open(message)._dismissAfter(3000);
   }
 
+
+
+  
   ngOnInit(): void {
     this.getAllplatos();
     console.log(this.platos);
+  }
+  agregarAlCarrito(platos:DetallesPedido) {
+    this.carritoService.agregarProducto(platos);
   }
 
   getAllplatos() {

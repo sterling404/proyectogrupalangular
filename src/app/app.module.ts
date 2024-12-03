@@ -27,6 +27,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { DescripcionComponent } from './components/descripcion/descripcion.component';
 import { PedidosComponent } from './components/pedidos/pedidos.component';
+import { LoginComponent } from './components/login/login.component';
+import { CarritoComponent } from './components/carrito/carrito.component';
 
 
 
@@ -41,6 +43,8 @@ import { PedidosComponent } from './components/pedidos/pedidos.component';
     IngresoComponent,
     DescripcionComponent,
     PedidosComponent,
+    LoginComponent,
+    CarritoComponent,
     
   ],
   imports: [

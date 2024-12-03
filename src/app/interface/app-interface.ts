@@ -38,7 +38,9 @@ export interface Usuario {
     pedido_id: number;
     plato_id: number;
     cantidad: number;
+    nombre:string;
     modificaciones?: string;
+    precio: number;
     status: 'activo' | 'inactivo';
   }
   
