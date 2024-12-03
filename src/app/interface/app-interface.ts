@@ -19,6 +19,13 @@ export interface Usuario {
     ingredientes: string;
     imagen?: string;
     fecha_creacion: string; // ISO date string
+    
+    pedido_id: number;
+    plato_id: number;
+    cantidad: number;
+    
+    modificaciones?: string;
+    
     status: 'activo' | 'inactivo';
   }
   

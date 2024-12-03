@@ -8,7 +8,7 @@ import { PedidosComponent } from './components/pedidos/pedidos.component';
 const routes: Routes = [
   {path:'addProduc',component:IngresoComponent},
   {path:'',component:IndexComponent},
-  {path:'comfim',component:DescripcionComponent},
+  {path:'descripcion',component:DescripcionComponent},
   {path:'listPedidos',component:PedidosComponent},
 ];
 

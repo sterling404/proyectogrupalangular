@@ -1,6 +1,7 @@
 
 import { MainService } from 'src/app/services/main.service';
-import { DetallesPedido } from 'src/app/interface/app-interface';
+// import { DetallesPedido } from 'src/app/interface/app-interface';
+import {Plato } from 'src/app/interface/app-interface';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
@@ -20,7 +21,7 @@ import { CarritoService } from 'src/app/services/carrito.service';
   styleUrls: ['./index.component.css']
 })
 export class IndexComponent implements OnInit {
-  platos!: DetallesPedido[]
+  platos!: Plato[]
   isLoading = false;
 
   constructor(private service: MainService,private snackBar: MatSnackBar, private router: Router,private carritoService: CarritoService){}
@@ -35,7 +36,7 @@ export class IndexComponent implements OnInit {
     this.getAllplatos();
     console.log(this.platos);
   }
-  agregarAlCarrito(platos:DetallesPedido) {
+  agregarAlCarrito(platos:Plato) {
     this.carritoService.agregarProducto(platos);
   }
 

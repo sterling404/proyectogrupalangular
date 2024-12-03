@@ -29,7 +29,7 @@ import { DescripcionComponent } from './components/descripcion/descripcion.compo
 import { PedidosComponent } from './components/pedidos/pedidos.component';
 import { LoginComponent } from './components/login/login.component';
 import { CarritoComponent } from './components/carrito/carrito.component';
-
+import { CarritoService } from './services/carrito.service';
 
 
 
@@ -70,7 +70,7 @@ import { CarritoComponent } from './components/carrito/carrito.component';
     ReactiveFormsModule  
 
   ],
-  providers: [],
+  providers: [CarritoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

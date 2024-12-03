@@ -1,83 +1,85 @@
-<div class="icon">
-    <button
-      mat-mini-fab
-      aria-label="Example icon button with a menu icon"
-      (click)="toggleCarShop()"
+<div>
+  <button
+    mat-mini-fab
+    aria-label="Example icon button with a menu icon"
+    (click)="toggleCarShop()"
+  >
+    <mat-icon
+      aria-hidden="false"
+      matBadge="{{ totalCantidad }}"
+      aria-label="Carrito"
     >
-      <mat-icon
-        aria-hidden="false"
-        matBadge="15"
-        aria-label="Example home icon"
-        fontIcon=""
-      >
-        shopping_cart
-      </mat-icon>
-    </button>
+      shopping_cart
+    </mat-icon>
+  </button>
 
-    <mat-icon class="menu" [matMenuTriggerFor]="menu">menu</mat-icon>
-    <mat-menu #menu="matMenu">
-      <ul>
-        <li><a routerLink="" routerLinkActive="active">inicio</a></li>
-        <li>
-          <a routerLink="/comfim" routerLinkActive="active"
-            >comfirmar pedido</a
-          >
-        </li> 
-        <li>
-          <a routerLink="/addProduc" routerLinkActive="active"
-            >agregar producto</a
-          >
-        </li>
-        <li>
-          <a routerLink="/listPedidos" routerLinkActive="active"
-            >lista de pedidos</a
-          >
-        </li>
-      </ul>
-    </mat-menu>
+  <!-- Solo muestra el carShop cuando 'showCarShop' es verdadero -->
+  <div *ngIf="showCarShop" class="carShop">
+    <h2>Carrito de Compras</h2>
+    <div>
+      <div *ngFor="let producto of carrito" class="contenprecio">
+        <div class="contenAction">
+          <p>{{ producto.nombre }}</p>
+          <div class="precioUnidadCantida">
 
-    <!-- Solo muestra el carShop cuando 'showCarShop' es verdadero -->
-    <div *ngIf="showCarShop" class="carShop">
-      <h3 class="title">Mi pedido</h3>
-      <div>
-        <div class="contenprecio">
-          <div class="contenAction">
-            <p>Nombre del producto</p>
             <div class="counter">
-              <button class="counter-btn" (click)="decrement()">-</button>
+              <button class="counter-btn" (click)="decrement(producto)">-</button>
               <input
                 class="counter-input"
                 matInput
                 type="number"
-                [(ngModel)]="value"
-                min="1"
-                max="20"
+                [(ngModel)]="producto.cantidad"
+                [min]="1"
+                [max]="20"
               />
-              <button class="counter-btn" (click)="increment()">+</button>
+              <button class="counter-btn" (click)="increment(producto)">+</button>
             </div>
+            <p> Precio: {{producto.precio*producto.cantidad}}</p>
           </div>
-          <div class="contenAction">
+        </div>
+        <button mat-button color="warn" (click)="eliminarProducto(producto.id)">
+          Eliminar 🗑️
+        </button>
+        <!-- <div class="contenAction">
             <button mat-button [matMenuTriggerFor]="menu">Menu</button>
             <mat-menu #menu="matMenu">
               <button mat-menu-item color="primary">Editar ✏️</button>
-              <button mat-menu-item color="warn">Eliminar 🗑️</button>
+              <button mat-menu-item color="warn" (click)="eliminarProducto(producto.id)>Eliminar 🗑️</button>
             </mat-menu>
-          </div>
-        </div>
-        <div class="Preciosection">
-          <h4 class="title">Resumen</h4>
+          </div> -->
+      </div>
+      <div *ngIf="carrito.length === 0">
+        <p>Tu carrito está vacío.</p>
+      </div>
+      <div class="Preciosection">
+        <h4 class="title">Resumen</h4>
 
-          <div class="contenprecio">
-            <p>Subtotal</p>
-            <span>$5000</span>
-          </div>
-          <div class="contenprecio">
-            <p>Total</p>
-            <span>$5000</span>
-          </div>
+        <div class="contenprecio">
+          <p>Total</p>
+          <h3>${{ total }}</h3>
         </div>
       </div>
-
-      <button mat-raised-button color="primary">Continuar</button>
+    </div>
+    <div class="contenButones">
+      <div *ngIf="carrito.length > 0">
+        <button mat-button (click)="vaciarCarrito()">Vaciar carrito</button>
+      </div>
+      <button mat-raised-button color="primary" (click)="continuarPedido()">Continuar</button>
     </div>
   </div>
+</div>
+
+<!-- <div *ngIf="showCarShop" class="carShop" class="carShop">
+    <h2>Carrito de Compras</h2>
+    <div *ngFor="let producto of carrito">
+      <p>{{ producto.nombre }} - ${{ producto.precio }} x {{ producto.cantidad }}</p>
+      <button mat-button (click)="eliminarProducto(producto.id)">Eliminar</button>
+    </div>
+    <div *ngIf="carrito.length > 0">
+      <h3>Total: ${{ total }}</h3>
+      <button mat-button (click)="vaciarCarrito()">Vaciar carrito</button>
+    </div>
+    <div *ngIf="carrito.length === 0">
+      <p>Tu carrito está vacío.</p>
+    </div>
+  </div> -->

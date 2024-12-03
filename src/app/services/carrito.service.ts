@@ -1,42 +1,50 @@
 import { Injectable } from '@angular/core';
 import { DetallesPedido } from 'src/app/interface/app-interface';
+import { BehaviorSubject } from 'rxjs';
+import {Plato } from 'src/app/interface/app-interface';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class CarritoService {
 
-  private carrito: DetallesPedido[] = [];
+  private carrito: Plato[] = [];
+  private carritoSubject = new BehaviorSubject<Plato[]>(this.carrito);
 
-  constructor() {}
-
-  // Obtener todos los productos en el carrito
   getCarrito() {
-    return [...this.carrito];
+    return this.carritoSubject.asObservable();
   }
 
-  // Agregar un producto al carrito
-  agregarProducto(producto: DetallesPedido) {
+  agregarProducto(producto: Plato) {
     const productoExistente = this.carrito.find(p => p.id === producto.id);
     if (productoExistente) {
       productoExistente.cantidad += 1;
     } else {
       this.carrito.push({ ...producto, cantidad: 1 });
     }
+    this.carritoSubject.next([...this.carrito]);
   }
 
-  // Eliminar un producto del carrito
   eliminarProducto(id: number) {
     this.carrito = this.carrito.filter(p => p.id !== id);
+    this.carritoSubject.next([...this.carrito]);
   }
 
-  // Obtener el total del carrito
   obtenerTotal() {
     return this.carrito.reduce((total, producto) => total + producto.precio * producto.cantidad, 0);
   }
 
-  // Vaciar el carrito
   vaciarCarrito() {
     this.carrito = [];
+    this.carritoSubject.next([...this.carrito]);
+  }
+  // Método para actualizar la cantidad de un producto
+  actualizarProducto(producto: Plato) {
+    const index = this.carrito.findIndex(p => p.id === producto.id);
+    if (index !== -1) {
+      this.carrito[index].cantidad = producto.cantidad;
+      this.carritoSubject.next([...this.carrito]);
+    }
   }
 }
